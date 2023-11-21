@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using KALORI.DATA.Abstract;
+using Core.Data_Access.Entities;
 
 namespace KALORI.DATA.Entities
 {
-    public class Ogun:BaseKalori
+    public class Ogun : IEntity
     {
         public int OgunId { get; set; }
         public string Isim { get; set; }

@@ -1,4 +1,5 @@
-﻿using KALORI.DATA.Entities;
+﻿using Kalori.Service.Abstract;
+using KALORI.DATA.Entities;
 using Kalori_DAL.ilk;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Kalori.Service.Concrete
 {
-    public class OgunYemekService
+    public class OgunYemekService:IOgunYemekService
     {
         OgunYemekDAL ogunYemekDAL = new OgunYemekDAL();
         public void Create(OgunYemek ogunYemek)
@@ -33,8 +34,7 @@ namespace Kalori.Service.Concrete
         }
         public List<OgunYemek> GetAll()
         {
-            OgunYemekDAL OgunYemekDAL = new OgunYemekDAL();
-            return OgunYemekDAL.GetAll();
+            return ogunYemekDAL.GetAll();
         }
 
 

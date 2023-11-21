@@ -1,10 +1,11 @@
 ﻿using Kalori_DAL.ilk;
 using System.Linq.Expressions;
 using KALORI.DATA.Entities;
+using Kalori.Service.Abstract;
 
 namespace Kalori.Service.Concrete
 {
-    public class YemekService
+    public class YemekService:IYemekService
     {
         private readonly YemekDAL _yemekDAL;
 

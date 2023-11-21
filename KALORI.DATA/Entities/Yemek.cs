@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using KALORI.DATA.Abstract;
+using Core.Data_Access.Entities;
 
 namespace KALORI.DATA.Entities
 {
-    public class Yemek: BaseKalori
+    public class Yemek : IEntity
     {
         public int YemekId { get; set; }
         public string Isim { get; set; }

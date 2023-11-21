@@ -1,5 +1,7 @@
-﻿using KALORI.DATA.Abstract;
+﻿
+using Core.Data_Access.EntityFramework;
 using KALORI.DATA.Entities;
+using Kalori_DAL.Abstract;
 using Kalori_DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
@@ -12,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Kalori_DAL.ilk
 {
-    public class KullaniciOgunDAL
+    public class KullaniciOgunDAL : EfEntityRepositoryBase<KullaniciOgun, KaloriHesaplamaDbContext>, IKullaniciOgunDAL
     {
         public KullaniciOgun GetKullaniciOgunWithOgunYemekleri(int kullaniciOgunId)
         {
@@ -27,14 +29,7 @@ namespace Kalori_DAL.ilk
 
         }
 
-        public void Create(KullaniciOgun kullaniciOgun)
-        {
-            using (KaloriHesaplamaDbContext context = new KaloriHesaplamaDbContext())
-            {
-                context.Add(kullaniciOgun);
-                context.SaveChanges();
-            }
-        }
+   
 
         public List<KullaniciOgun> GetAll()
         {
@@ -52,13 +47,5 @@ namespace Kalori_DAL.ilk
             }
         }
 
-        public void Update(KullaniciOgun entity)
-        {
-            using (KaloriHesaplamaDbContext context = new KaloriHesaplamaDbContext())
-            {
-                context.Update(entity);
-                context.SaveChanges();
-            }
-        }
     }
 }

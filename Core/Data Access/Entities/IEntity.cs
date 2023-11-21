@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KALORI.DATA.Abstract
+namespace Core.Data_Access.Entities
 {
-    public abstract class BaseKalori
+    public interface IEntity
     {
 
     }

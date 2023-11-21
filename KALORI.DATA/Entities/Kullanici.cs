@@ -1,14 +1,14 @@
-﻿using System;
+﻿using Core.Data_Access.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using KALORI.DATA.Abstract;
 
 namespace KALORI.DATA.Entities
 {
-    public class Kullanici:BaseKalori
+    public class Kullanici:IEntity
     {
         public Kullanici()
         {

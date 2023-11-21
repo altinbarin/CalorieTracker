@@ -1,8 +1,11 @@
-﻿using KALORI.DATA.Abstract;
+﻿
+using Core.Data_Access.EntityFramework;
 using KALORI.DATA.Entities;
+using Kalori_DAL.Abstract;
 using Kalori_DAL.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -11,27 +14,9 @@ using System.Threading.Tasks;
 namespace Kalori_DAL.ilk
 {
 
-    public class KategoriDAL
-
+    public class KategoriDAL : EfEntityRepositoryBase<Kategori, KaloriHesaplamaDbContext>, IKategoriDAL
     {
-        public void Create(Kategori entity)
-        {
-            using (KaloriHesaplamaDbContext context = new KaloriHesaplamaDbContext())
-            {
-                context.Add(entity);
-                context.SaveChanges();
-            }
-        }
-
-        public void Delete(Kategori entity)
-        {
-            using (KaloriHesaplamaDbContext context = new KaloriHesaplamaDbContext())
-            {
-                context.Remove(entity);
-                context.SaveChanges();
-            }
-        }
-
+     
         public Kategori GetById(int id)
         {
             using (KaloriHesaplamaDbContext context = new KaloriHesaplamaDbContext())

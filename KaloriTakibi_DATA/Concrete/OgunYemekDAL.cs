@@ -1,8 +1,10 @@
-﻿using KALORI.DATA.Abstract;
+﻿using Core.Data_Access.EntityFramework;
 using KALORI.DATA.Entities;
+using Kalori_DAL.Abstract;
 using Kalori_DAL.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -10,28 +12,14 @@ using System.Threading.Tasks;
 
 namespace Kalori_DAL.ilk
 {
-    public class OgunYemekDAL
+    public class OgunYemekDAL : EfEntityRepositoryBase<OgunYemek, KaloriHesaplamaDbContext>, IOgunYemekDAL
     {
 
 
-        public void Create(OgunYemek entity)
-        {
-            using (KaloriHesaplamaDbContext context = new KaloriHesaplamaDbContext())
-            {
-                context.Add(entity);
-                context.SaveChanges();
-            }
-        }
+       
 
 
-        public void Delete(OgunYemek entity)
-        {
-            using (KaloriHesaplamaDbContext context = new KaloriHesaplamaDbContext())
-            {
-                context.Remove(entity);
-                context.SaveChanges();
-            }
-        }
+       
 
         public List<OgunYemek> GetAll()
         {

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using KALORI.DATA.Abstract;
+using Core.Data_Access.Entities;
 
 namespace KALORI.DATA.Entities
 {
-    public class OgunYemek:BaseKalori
+    public class OgunYemek : IEntity
     {
         public int IslemId { get; set; }
         public int YemekId { get; set; }

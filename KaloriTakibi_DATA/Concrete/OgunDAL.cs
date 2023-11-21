@@ -1,9 +1,11 @@
-﻿using KALORI.DATA.Abstract;
+﻿using Core.Data_Access.EntityFramework;
 using KALORI.DATA.Entities;
+using Kalori_DAL.Abstract;
 using Kalori_DAL.Context;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -11,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Kalori_DAL.ilk
 {
-    public class OgunDAL
+    public class OgunDAL : EfEntityRepositoryBase<Ogun, KaloriHesaplamaDbContext>, IOgunDAL
     {
 
         public List<Ogun> GetAllWhere(Expression<Func<Ogun, bool>> expression)

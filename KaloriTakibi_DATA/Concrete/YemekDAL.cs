@@ -1,8 +1,10 @@
-﻿using KALORI.DATA.Abstract;
+﻿using Core.Data_Access.EntityFramework;
 using KALORI.DATA.Entities;
+using Kalori_DAL.Abstract;
 using Kalori_DAL.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -10,26 +12,8 @@ using System.Threading.Tasks;
 
 namespace Kalori_DAL.ilk
 {
-    public class YemekDAL
-    {
-
-        public void Create(Yemek yemek)
-        {
-            using (KaloriHesaplamaDbContext context = new KaloriHesaplamaDbContext())
-            {
-                context.Add(yemek);
-                context.SaveChanges();
-            }
-        }
-
-        public void Delete(Yemek yemek)
-        {
-            using (KaloriHesaplamaDbContext context = new KaloriHesaplamaDbContext())
-            {
-                context.Remove(yemek);
-                context.SaveChanges();
-            }
-        }
+    public class YemekDAL : EfEntityRepositoryBase<Yemek, KaloriHesaplamaDbContext>, IYemekDAL
+    {    
 
         public List<Yemek> GetAllWhere(Expression<Func<Yemek, bool>> expression)
         {
@@ -69,14 +53,7 @@ namespace Kalori_DAL.ilk
             }
         }
 
-        public void Update(Yemek yemek)
-        {
-            using (KaloriHesaplamaDbContext context = new KaloriHesaplamaDbContext())
-            {
-                context.Update(yemek);
-                context.SaveChanges();
-            }
-        }
+    
 
         public int YemekIsmineGoreYemekId(string yemekAdi)
         {

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kalori_DAL", "KaloriTakibi_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KaloriTakip_WFAUI", "KaloriTakip_WFAUI\KaloriTakip_WFAUI.csproj", "{9C15D9BA-6399-436E-8E73-60817414D58A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kalori.Service", "Kalori.Service\Kalori.Service.csproj", "{BD4367CF-EFF1-4BE1-A2FD-BBC0A755379E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kalori.Service", "Kalori.Service\Kalori.Service.csproj", "{BD4367CF-EFF1-4BE1-A2FD-BBC0A755379E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{F1307FE5-056E-4566-A9F8-9B719FB239D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{BD4367CF-EFF1-4BE1-A2FD-BBC0A755379E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD4367CF-EFF1-4BE1-A2FD-BBC0A755379E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD4367CF-EFF1-4BE1-A2FD-BBC0A755379E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1307FE5-056E-4566-A9F8-9B719FB239D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1307FE5-056E-4566-A9F8-9B719FB239D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1307FE5-056E-4566-A9F8-9B719FB239D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1307FE5-056E-4566-A9F8-9B719FB239D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

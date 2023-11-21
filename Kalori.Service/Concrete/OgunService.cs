@@ -1,4 +1,5 @@
-﻿using KALORI.DATA.Entities;
+﻿using Kalori.Service.Abstract;
+using KALORI.DATA.Entities;
 using Kalori_DAL.Context;
 using Kalori_DAL.ilk;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Kalori.Service.Concrete
 {
-    public class OgunService
+    public class OgunService:IOgunService
     {
         OgunDAL ogunDAL = new OgunDAL();
         public Ogun GetById(int id)
@@ -23,7 +24,6 @@ namespace Kalori.Service.Concrete
         }
         public List<string> OgunIsimlerListesi()
         {
-            OgunDAL ogunDAL = new OgunDAL();
             return ogunDAL.OgunIsimlerListesi();
         }
     }

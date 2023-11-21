@@ -1,8 +1,10 @@
-﻿using KALORI.DATA.Abstract;
+﻿using Core.Data_Access.EntityFramework;
 using KALORI.DATA.Entities;
+using Kalori_DAL.Abstract;
 using Kalori_DAL.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -10,16 +12,9 @@ using System.Threading.Tasks;
 
 namespace Kalori_DAL.ilk
 {
-    public class KullaniciDAL
+    public class KullaniciDAL : EfEntityRepositoryBase<Kullanici, KaloriHesaplamaDbContext>, IKullaniciDAL
     {
-        public void Create(Kullanici kullanici)
-        {
-            using (KaloriHesaplamaDbContext context = new KaloriHesaplamaDbContext())
-            {
-                context.Add(kullanici);
-                context.SaveChanges();
-            }
-        }
+       
 
         public List<Kullanici> GetAllWhere(Expression<Func<Kullanici, bool>> expression)
         {
@@ -53,14 +48,7 @@ namespace Kalori_DAL.ilk
             }
         }
 
-        public void Update(Kullanici kullanici)
-        {
-            using (KaloriHesaplamaDbContext context = new KaloriHesaplamaDbContext())
-            {
-                context.Update(kullanici);
-                context.SaveChanges();
-            }
-        }
+     
     }
 
 

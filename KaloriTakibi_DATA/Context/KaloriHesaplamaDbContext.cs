@@ -11,6 +11,16 @@ namespace Kalori_DAL.Context
 {
     public class KaloriHesaplamaDbContext: DbContext
     {
+        public KaloriHesaplamaDbContext()
+        {
+
+        }
+        public KaloriHesaplamaDbContext(DbContextOptions<KaloriHesaplamaDbContext> options) : base(options)
+        {
+
+        }
+
+
         public DbSet<Kategori> Kategoriler { get; set; }
         public DbSet<Kullanici> Kullanicilar { get; set; }
         public DbSet<KullaniciOgun> KullaniciOgunleri { get; set; }
@@ -26,12 +36,6 @@ namespace Kalori_DAL.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.ApplyConfiguration(new KategoriConfig());
-            //modelBuilder.ApplyConfiguration(new KullaniciConfig());
-            //modelBuilder.ApplyConfiguration(new KullaniciOgunConfig());
-            //modelBuilder.ApplyConfiguration(new OgunConfig());
-            //modelBuilder.ApplyConfiguration(new OgunYemekConfig());
-            //modelBuilder.ApplyConfiguration(new YemekConfig());
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(KaloriHesaplamaDbContext).Assembly);
         }
 
